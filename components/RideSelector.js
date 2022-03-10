@@ -28,30 +28,32 @@ const carList = [
   { service: "UberSelect", iconUrl: UberSelect, priceMultiplier: 1.5 },
   { service: "UberXL", iconUrl: UberXL, priceMultiplier: 1.5 },
 ];
+
 const RideSelector = () => {
-  const basePrice = 154877;
+  const basePrice = 1547;
   return (
     <div className={style.wrapper}>
-      <div className={style.title}>Choose a ride, or swip up for more</div>
+      <div className={style.title}>Choose a ride, or swipe up for more</div>
       <div className={style.carList}>
         {carList.map((car, index) => (
           <div
             key={index}
+            className={style.car}
             // className={`${
             //   selectedRide.service === car.service
             //     ? style.selectedCar
             //     : style.car
             // }`}
-            onClick={() => {
-              setSelectedRide(car);
-              setPrice(
-                ((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5)
-              );
-            }}
+            // onClick={() => {
+            //   setSelectedRide(car);
+            //   setPrice(
+            //     ((basePrice / 10 ** 5) * car.priceMultiplier).toFixed(5)
+            // );
+            // }}
           >
             <Image
               src={car.iconUrl}
-              className={style.carImage}
+              // className={style.carImage}
               height={50}
               width={50}
             />
